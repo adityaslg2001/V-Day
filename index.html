@@ -1,187 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Valentine ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{
-  height:100vh;
-  overflow:hidden;
-  background:linear-gradient(135deg,#ff4e50,#fc913a);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To The Moon Swati ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ff3366;
+            --soft-pink: #ff85a2;
+            --deep-rose: #700b2e;
+        }
 
-/* Floating hearts */
-.heart{
-  position:absolute;
-  width:20px;
-  height:20px;
-  background:red;
-  transform:rotate(45deg);
-  animation:float 8s linear infinite;
-}
-.heart::before,.heart::after{
-  content:'';
-  position:absolute;
-  width:20px;
-  height:20px;
-  background:red;
-  border-radius:50%;
-}
-.heart::before{top:-10px;left:0}
-.heart::after{left:-10px;top:0}
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
 
-@keyframes float{
-  0%{transform:translateY(100vh) rotate(45deg);opacity:1}
-  100%{transform:translateY(-10vh) rotate(45deg);opacity:0}
-}
+        body {
+            height: 100vh;
+            overflow: hidden;
+            /* Updated to a more Valentine-themed cosmic gradient */
+            background: linear-gradient(135deg, #4b0026 0%, #700b2e 30%, #ff3366 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* Glass Card */
-.card{
-  backdrop-filter:blur(20px);
-  background:rgba(255,255,255,0.15);
-  padding:30px 20px;
-  border-radius:20px;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.2);
-  width:90%;
-  max-width:350px;
-  animation:pop 1s ease;
-}
+        /* Animated Nebula Glow */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(255, 51, 102, 0.2) 0%, transparent 50%);
+            animation: pulse 10s infinite alternate;
+            z-index: 1;
+        }
 
-@keyframes pop{
-  from{transform:scale(0.6);opacity:0}
-  to{transform:scale(1);opacity:1}
-}
+        @keyframes pulse {
+            0% { transform: scale(1) translate(-10%, -10%); }
+            100% { transform: scale(1.2) translate(10%, 10%); }
+        }
 
-h1{
-  font-family:'Great Vibes',cursive;
-  font-size:2.2rem;
-  color:#fff;
-  margin-bottom:15px;
-}
+        /* Space Particles */
+        .stars {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
 
-p{
-  color:#fff;
-  margin-bottom:25px;
-  font-size:1rem;
-}
+        /* Glassmorphism Card */
+        .container {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 3.5rem 2rem;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+            width: 90%;
+            max-width: 400px;
+            animation: cardEntrance 1s ease-out;
+        }
 
-.btns{
-  display:flex;
-  justify-content:space-around;
-  position:relative;
-}
+        @keyframes cardEntrance {
+            from { transform: translateY(50px) scale(0.9); opacity: 0; }
+            to { transform: translateY(0) scale(1); opacity: 1; }
+        }
 
-button{
-  padding:10px 20px;
-  border:none;
-  border-radius:25px;
-  font-weight:500;
-  cursor:pointer;
-  transition:0.3s;
-}
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
 
-.yes{
-  background:#fff;
-  color:#ff4e50;
-}
-.yes:hover{transform:scale(1.1)}
+        p {
+            color: #fff;
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
 
-.no{
-  background:#000000aa;
-  color:#fff;
-  position:absolute;
-}
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            min-height: 80px;
+        }
 
-/* Celebration */
-.success{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  display:none;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  background:linear-gradient(135deg,#ff758c,#ff7eb3);
-  color:white;
-  text-align:center;
-}
+        button {
+            padding: 14px 32px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.success h2{
-  font-size:2rem;
-  margin-bottom:15px;
-}
+        .yes-btn {
+            background: white;
+            color: var(--primary);
+            z-index: 20;
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
 
-.success img{
-  width:200px;
-  border-radius:15px;
-  margin-top:10px;
-}
+        .no-btn {
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative; 
+            z-index: 10;
+        }
 
-.fade-in{
-  animation:fade 1s ease forwards;
-}
+        /* Success Screen */
+        .success-screen {
+            position: fixed;
+            inset: 0;
+            background: radial-gradient(circle, #ff4e50, #700b2e);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            color: white;
+            text-align: center;
+            animation: fadeIn 0.8s ease;
+        }
 
-@keyframes fade{
-  from{opacity:0}
-  to{opacity:1}
-}
+        .success-screen img {
+            width: 280px;
+            border-radius: 30px;
+            margin: 25px;
+            border: 5px solid white;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.3);
+        }
 
-</style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Particle Animation */
+        .particle {
+            position: absolute;
+            pointer-events: none;
+            animation: floatUp 5s linear infinite;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.5));
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(110vh) scale(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5) rotate(360deg); opacity: 0; }
+        }
+    </style>
 </head>
 <body>
 
-<div id="hearts"></div>
+    <div class="stars" id="starContainer"></div>
 
-<div class="card">
-  <h1>Hey ❤️</h1>
-  <p>Will you be my Valentine?</p>
-  <div class="btns">
-    <button class="yes" onclick="yesClick()">Yes 💖</button>
-    <button class="no" id="noBtn">No 😢</button>
-  </div>
-</div>
+    <div class="container" id="mainCard">
+        <h1>Hi Swati❤️</h1>
+        <p>Will you be my Valentine?</p>
+        <div class="btn-group">
+            <button class="yes-btn" id="yesBtn" onclick="celebrate()">YES! 🚀</button>
+            <button class="no-btn" id="noBtn">No 🥺</button>
+        </div>
+    </div>
 
-<div class="success" id="success">
-  <h2>Yayyy!! ❤️</h2>
-  <p>You made me the happiest 💕</p>
-  <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
-</div>
+    <div class="success-screen" id="success">
+        <h1>To the moon and back! ✨</h1>
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZueGZuJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/c76IJLufpNwSULPk77/giphy.gif" alt="Happy Astronaut Cat">
+        <p>You make my heart skip a beat. ❤️</p>
+    </div>
 
-<script>
-// floating hearts
-const heartsContainer = document.getElementById('hearts');
-function createHeart(){
-  const h = document.createElement('div');
-  h.classList.add('heart');
-  h.style.left = Math.random()*100 + 'vw';
-  h.style.animationDuration = (5 + Math.random()*5) + 's';
-  heartsContainer.appendChild(h);
-  setTimeout(()=>h.remove(),8000);
-}
-setInterval(createHeart,300);
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const starContainer = document.getElementById('starContainer');
+        let yesScale = 1;
 
-// moving NO button
-const noBtn = document.getElementById('noBtn');
-noBtn.addEventListener('mouseover',()=>{
-  const x = Math.random()*200 - 100;
-  const y = Math.random()*200 - 100;
-  noBtn.style.transform = `translate(${x}px,${y}px)`;
-});
+        // Generate Cosmic Valentine Particles
+        function createParticle() {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            const icons = ['❤️', '✨', '💖', '⭐', '💓', '🪐'];
+            p.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+            p.style.left = Math.random() * 100 + 'vw';
+            p.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            p.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            starContainer.appendChild(p);
+            setTimeout(() => p.remove(), 5000);
+        }
+        setInterval(createParticle, 100);
 
-// success
-function yesClick(){
-  document.getElementById('success').style.display='flex';
-}
-</script>
+        // "No" Button Escape Logic
+        const moveNo = () => {
+            noBtn.style.position = 'fixed';
+            const padding = 100;
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - padding * 2) + padding;
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - padding * 2) + padding;
+            
+            noBtn.style.left = x + 'px';
+            noBtn.style.top = y + 'px';
 
+            yesScale += 0.35;
+            yesBtn.style.transform = `scale(${yesScale})`;
+            
+            const messages = ["Sure?", "Try again!", "Please?", "Wrong button!", "Are you lost?", "Click the big one!"];
+            noBtn.innerText = messages[Math.floor(Math.random() * messages.length)];
+        };
+
+        noBtn.addEventListener('mouseover', moveNo);
+        noBtn.addEventListener('touchstart', (e) => {
+            e.preventDefault(); 
+            moveNo();
+        });
+
+        function celebrate() {
+            const successOverlay = document.getElementById('success');
+            successOverlay.style.display = 'flex';
+            document.getElementById('mainCard').style.display = 'none';
+            
+            // Celebration explosion
+            for(let i=0; i<100; i++) {
+                setTimeout(createParticle, i * 30);
+            }
+        }
+    </script>
 </body>
 </html>
